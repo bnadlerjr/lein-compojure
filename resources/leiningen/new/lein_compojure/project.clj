@@ -15,7 +15,7 @@
   :aliases {"autotest" ["do" ["with-profile" "test" "test-refresh"]]
             "lint" ["do" ["ancient"] ["kibit"] ["eastwood"]]
             "release" ["do" ["clean"] ["uberjar"] ["heroku" "deploy"]]
-            "server" ["do" ["ring" "server"]]}
+            "server" ["do" ["ring" "server-headless"]]}
 
   :dependencies [[compojure "1.6.1"]
                  [environ "1.1.0"]

@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file. This change
 ## [Unreleased]
 ### Added
 ### Changed
+- Don't automatically open a browser window when running `lein server`
+
 ### Deprecated
 ### Removed
 ### Fixed
