@@ -17,29 +17,29 @@ Both Clojure and Leiningen require [OpenJDK](http://openjdk.java.net/install/). 
 
 ## Initial Setup
 1. Clone this repository
-2. Create a `profiles.clj` file in the project's root. See the [Configuration Variables](configuration-variables) section for more information.
+2. Create a `profiles.clj` file in the project's root. See the [Configuration Variables](#configuration-variables) section for more information.
 3. Run `lein deps` in the project's root to install dependencies.
 
 ## Workflow
 ### I want to...
 <dl>
     <dt>start the development server</dt>
-    <dd>`lein server`</dd>
+    <dd><pre>lein server</pre></dd>
     <dt>start a REPL session</dt>
-    <dd>`lein repl`</dd>
+    <dd><pre>lein repl</pre></dd>
     <dt>watch source files for changes and automcatically run tests</dt>
-    <dd>`lein autotest`</dd>
+    <dd><pre>lein autotest</pre></dd>
     <dt>lint project source files</dt>
-    <dd>`lein lint`</dd>
+    <dd><pre>lein lint</pre></dd>
     <dt>deploy a production release to Heroku</dt>
     <dd>
         <ol>
-            <li>Document added, removed, fixed, etc. in `CHANGELOG.md`</li>
-            <li>Update the version entry in `project.clj`</li>
-            <li>`git add . && git commit`</li>
-            <li>`git tag -a v<VERSION> -m "Tag version <VERSION>"`</li>
-            <li>`git push origin --tags && git push</li>
-            <li>`lein release`</li>
+            <li>Document added, removed, fixed, etc. in <pre>CHANGELOG.md</pre></li>
+            <li>Update the version entry in <pre>project.clj</pre></li>
+            <li><pre>git add . && git commit</pre></li>
+            <li><pre>git tag -a v<VERSION> -m "Tag version <VERSION>"</pre></li>
+            <li><pre>git push origin --tags && git push</pre></li>
+            <li><pre>lein release</pre></li>
         </ol>
     </dd>
 </dl>
@@ -63,7 +63,7 @@ The `profiles.clj` is ignored by Git so it is safe to put secrets into it. In pr
 <table>
     <thead>
         <tr>
-            <th>`profiles.clj` Name</th>
+            <th><pre>profiles.clj</pre> Name</th>
             <th>Heroku Name</th>
             <th>Required</th>
             <th>Type Conversion</th>
