@@ -34,12 +34,12 @@ Both Clojure and Leiningen require [OpenJDK](http://openjdk.java.net/install/). 
     <dt>deploy a production release to Heroku</dt>
     <dd>
         <ol>
-            <li>Document added, removed, fixed, etc. in <pre>CHANGELOG.md</pre></li>
-            <li>Update the version entry in <pre>project.clj</pre></li>
-            <li><pre>git add . && git commit</pre></li>
-            <li><pre>git tag -a v<VERSION> -m "Tag version <VERSION>"</pre></li>
-            <li><pre>git push origin --tags && git push</pre></li>
-            <li><pre>lein release</pre></li>
+            <li>Document added, removed, fixed, etc. in <code>CHANGELOG.md</code></li>
+            <li>Update the version entry in <code>project.clj</code></li>
+            <li><code>git add . && git commit</code></li>
+            <li><code>git tag -a v<VERSION> -m "Tag version <VERSION>"</code></li>
+            <li><code>git push origin --tags && git push</code></li>
+            <li><code>lein release</code></li>
         </ol>
     </dd>
 </dl>
@@ -63,7 +63,7 @@ The `profiles.clj` is ignored by Git so it is safe to put secrets into it. In pr
 <table>
     <thead>
         <tr>
-            <th><pre>profiles.clj</pre> Name</th>
+            <th><code>profiles.clj</code> Name</th>
             <th>Heroku Name</th>
             <th>Required</th>
             <th>Type Conversion</th>
