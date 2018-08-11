@@ -34,11 +34,11 @@ Both Clojure and Leiningen require [OpenJDK](http://openjdk.java.net/install/). 
     <dt>deploy a production release to Heroku</dt>
     <dd>
         <ol>
-            <li>Update `CHANGELOG.md`</li>
-            <li>Update version in `project.clj`</li>
-            <li>Commit changes</li>
+            <li>Document added, removed, fixed, etc. in `CHANGELOG.md`</li>
+            <li>Update the version entry in `project.clj`</li>
+            <li>`git add . && git commit`</li>
             <li>`git tag -a v<VERSION> -m "Tag version <VERSION>"`</li>
-            <li>`git push origin --tags</li>
+            <li>`git push origin --tags && git push</li>
             <li>`lein release`</li>
         </ol>
     </dd>
