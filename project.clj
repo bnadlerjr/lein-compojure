@@ -1,4 +1,4 @@
-(defproject bnadlerjr/lein-template "0.1.0"
+(defproject bnadlerjr/lein-compojure "0.1.0"
   :description "Leiningen template for generating Compojure projects."
   :url "http://github.com/bnadlerjr/lein-compojure"
   :license {:name "Eclipse Public License"

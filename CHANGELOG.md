@@ -7,6 +7,8 @@ All notable changes to this project will be documented in this file. This change
 ### Deprecated
 ### Removed
 ### Fixed
+- Incorrect name in project / Clojars
+
 ### Security
 
 ## [0.1.0] - 2018-08-11
