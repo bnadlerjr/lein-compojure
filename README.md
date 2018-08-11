@@ -17,6 +17,15 @@ Generates a compojure project with the following default features:
 
 `lein new bnadlerjr/lein-compojure <PROJECT_NAME>`
 
+## Clojars
+
+1. Document added, removed, fixed, etc. in CHANGELOG
+1. Update the version in `project.clj`
+1. `git add . && git commit`
+1. `git tag -a vx.x.x -m "Tag version x.x.x"`
+1. `git push --tags && git push`
+1. `lein deploy clojars`
+
 ## License
 
 Copyright © 2018 Bob Nadler, Jr.
