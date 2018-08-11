@@ -27,10 +27,7 @@ Generates a compojure project with the following default features:
 1. `lein deploy clojars`
 
 ## TODO:
-* don't open browser automatically when running `lein server`
 * fix handler test so that assertions are in correct order (i.e. expected then actual)
-* separate route with defaults for api and test
-* tests for JSON api routes (GET and POST)
 
 ## License
 
