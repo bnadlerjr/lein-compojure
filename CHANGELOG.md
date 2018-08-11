@@ -3,6 +3,8 @@ All notable changes to this project will be documented in this file. This change
 
 ## [Unreleased]
 ### Added
+- Example site and api routes with tests
+
 ### Changed
 - Don't automatically open a browser window when running `lein server`
 
