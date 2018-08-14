@@ -40,7 +40,8 @@
 
   :profiles
   {:project-dev
-   {:dependencies [[org.clojure/tools.namespace "0.2.11"]
+   {:dependencies [[javax.servlet/servlet-api "2.5"]
+                   [org.clojure/tools.namespace "0.2.11"]
                    [org.clojure/tools.nrepl "0.2.13"]
                    [pjstadig/humane-test-output "0.8.3"]
                    [prone "1.6.0"]

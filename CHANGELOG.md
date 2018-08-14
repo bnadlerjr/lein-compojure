@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file. This change
 ## [Unreleased]
 ### Added
 - Example site and api routes with tests
+- javax servlet as a development dependency
 
 ### Fixed
 - Use correct test assertion order in handler test

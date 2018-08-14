@@ -28,7 +28,6 @@ Generates a compojure project with the following default features:
 
 ## TODO:
 * start / stop functions
-* javax dependency
 * flash support
 * CSRF token support
 * document how to use prone
