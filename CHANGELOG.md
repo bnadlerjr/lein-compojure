@@ -5,6 +5,9 @@ All notable changes to this project will be documented in this file. This change
 ### Added
 - Example site and api routes with tests
 
+### Fixed
+- Use correct test assertion order in handler test
+
 ### Changed
 - Don't automatically open a browser window when running `lein server`
 

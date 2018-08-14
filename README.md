@@ -27,7 +27,15 @@ Generates a compojure project with the following default features:
 1. `lein deploy clojars`
 
 ## TODO:
-* fix handler test so that assertions are in correct order (i.e. expected then actual)
+* start / stop functions
+* javax dependency
+* flash support
+* CSRF token support
+* document how to use prone
+* document how to focus a single autotest
+* Tmux script
+* HTTP Basic Auth by default
+* use basic heroku secure middleware in production
 
 ## License
 
