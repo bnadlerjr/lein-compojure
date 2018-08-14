@@ -1,0 +1,17 @@
+#!/bin/bash
+# Script that starts a new tmux session for development with windows for
+# workspace, server, autotest, and REPL.
+tmux new-session -d -s {{ name }}
+tmux rename-window -t {{ name }}:1 "workspace"
+
+tmux new-window -t {{ name }}:2 -n "server"
+tmux send-keys "lein server" C-m
+
+tmux new-window -t {{ name }}:3 -n "autotest"
+tmux send-keys "lein autotest" C-m
+
+tmux new-window -t {{ name }}:4 -n "repl"
+tmux send-keys "lein repl" C-m
+
+tmux select-window -t {{ name }}:1
+tmux attach-session -t {{ name }}

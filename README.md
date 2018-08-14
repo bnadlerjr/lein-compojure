@@ -32,7 +32,6 @@ Generates a compojure project with the following default features:
 * CSRF token support
 * document how to use prone
 * document how to focus a single autotest
-* Tmux script
 * HTTP Basic Auth by default
 * use basic heroku secure middleware in production
 
