@@ -7,12 +7,14 @@ All notable changes to this project will be documented in this file. This change
 - javax servlet as a development dependency
 - Script for starting a tmux session w/ windows for workspace, server, etc.
 - Templating helpers with flash support
+- Start / Stop functions
 
 ### Fixed
 - Use correct test assertion order in handler test
 
 ### Changed
 - Don't automatically open a browser window when running `lein server`
+- Separate app namespace
 
 ### Deprecated
 ### Removed

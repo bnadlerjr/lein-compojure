@@ -22,6 +22,7 @@
              ["resources/templates/index.html.selmer" (render "index.html.selmer" data)]
              ["resources/templates/layout.html.selmer" (render "layout.html.selmer" data)]
              ["scripts/run-tmux" (render "run-tmux" data)]
+             ["src/{{sanitized}}/app.clj" (render "app.clj" data)]
              ["src/{{sanitized}}/env.clj" (render "env.clj" data)]
              ["src/{{sanitized}}/handler.clj" (render "handler.clj" data)]
              ["src/{{sanitized}}/templating.clj" (render "templating.clj" data)]

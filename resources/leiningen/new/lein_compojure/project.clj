@@ -1,7 +1,7 @@
 (defproject {{name}} "0.1.0-SNAPSHOT"
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
-  :main ^:skip-aot {{name}}.handler
+  :main ^:skip-aot {{name}}.app
   :min-lein-version "2.5.3"
   :source-paths ["src"]
   :resource-paths ["resources"]
@@ -54,7 +54,9 @@
 
     :repl-options {:init-ns user}
 
-    :ring {:handler {{name}}.handler/app
+    :ring {:handler {{name}}.app/handler
+           :init {{name}}.app/init
+           :destroy {{name.app/stop}}
            :stacktrace-middleware prone.middleware/wrap-exceptions}
 
     :source-paths ["dev-src"]

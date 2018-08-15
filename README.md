@@ -27,7 +27,6 @@ Generates a compojure project with the following default features:
 1. `lein deploy clojars`
 
 ## TODO:
-* start / stop functions
 * document how to use prone
 * document how to focus a single autotest
 * HTTP Basic Auth by default
@@ -36,8 +35,9 @@ Generates a compojure project with the following default features:
 * investigate how mount could fit in
 * optional postgresql support w/ migrations
 * optional cljs support
-* separate main from handler (call it app?)
 * is app_secret needed for cookies?
+* handler tests should demo HTTP Basic login
+* logfmt support
 
 ## License
 
