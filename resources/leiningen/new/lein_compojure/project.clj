@@ -18,6 +18,8 @@
             "server" ["do" ["ring" "server-headless"]]}
 
   :dependencies [[bnadlerjr/logfmt "0.1.0"]
+                 [buddy/buddy-auth "2.1.0"]
+                 [buddy/buddy-core "1.5.0"]
                  [compojure "1.6.1"]
                  [environ "1.1.0"]
                  [http-kit "2.3.0"]
@@ -46,6 +48,7 @@
                    [org.clojure/tools.nrepl "0.2.13"]
                    [pjstadig/humane-test-output "0.8.3"]
                    [prone "1.6.0"]
+                   [ring-basic-auth-test "0.1.0"]
                    [ring/ring-mock "0.3.2"]]
 
     :injections [(require 'pjstadig.humane-test-output)

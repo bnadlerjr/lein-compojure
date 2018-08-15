@@ -18,6 +18,7 @@ All notable changes to this project will be documented in this file. This change
 ### Changed
 - Don't automatically open a browser window when running `lein server`
 - Separate app namespace from routes
+- Use HTTP Basic Auth by default
 
 ### Deprecated
 ### Removed

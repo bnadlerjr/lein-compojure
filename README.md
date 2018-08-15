@@ -27,11 +27,10 @@ Generates a compojure project with the following default features:
 1. `lein deploy clojars`
 
 ## TODO:
-* HTTP Basic Auth by default
-* investigate how mount could fit in
 * optional postgresql support w/ migrations
 * optional cljs support
-* handler tests should demo HTTP Basic login
+* is it worth it to attach REPL to running server? can it be automated w/ a lein alias?
+* investigate how mount could fit in
 
 ## License
 

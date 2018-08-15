@@ -4,19 +4,21 @@
             [environ.core :refer [env]]
             [org.httpkit.server :as http-kit]
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
+            [{{name}}.auth :refer [wrap-auth-middleware]]
             [{{name}}.routes :refer [site-routes]])
   (:gen-class))
 
 ;; Application Ring handler
 (def handler
   (if (not= "production" (env :ring-env "production"))
-    (wrap-defaults site-routes site-defaults)
-    (wrap-defaults site-routes
-                   (-> site-defaults
-                       (assoc :proxy true)
-                       (assoc-in [:session :cookie-attrs :secure] true)
-                       (assoc-in [:session :cookie-name] "{{name}}-session")
-                       (assoc-in [:security :ssl-redirect] true)))))
+    (wrap-auth-middleware (wrap-defaults site-routes site-defaults))
+    (wrap-auth-middleware
+      (wrap-defaults site-routes
+                     (-> site-defaults
+                         (assoc :proxy true)
+                         (assoc-in [:session :cookie-attrs :secure] true)
+                         (assoc-in [:session :cookie-name] "{{name}}-session")
+                         (assoc-in [:security :ssl-redirect] true))))))
 
 (defn init
   "Initializes application."
