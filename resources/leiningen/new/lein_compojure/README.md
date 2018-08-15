@@ -32,6 +32,31 @@ Both Clojure and Leiningen require [OpenJDK](http://openjdk.java.net/install/). 
     <dt>watch source files for changes and automcatically run tests</dt>
     <dd><pre>lein autotest</pre></dd>
 
+    <dt>watch source files for changes and automatically run a <strong>single</strong> test</dd>
+    <dd>
+        With the below code, only <code>test-addition</code> will run until the <code>:test-refresh/focus</code> marker is removed from it.
+        <pre>
+(deftest ^:test-refresh/focus test-addition
+  (is (= 2 (+ 1 1))))
+
+(deftest test-subtraction
+  (is (= 0 (- 10 9 1))))
+        </pre>
+    </dd>
+
+    <dt>insert a <a href="https://github.com/magnars/prone">prone</a> debug breakpoint</dt>
+    <dd>
+        <pre>
+(ns example
+  (:require [prone.debug :refer [debug]]))
+
+(defn myhandler [req]
+  ;; ...
+  (let [person (lookup-person (:id (:params req)))]
+    (debug)))
+        </pre>
+    </dd>
+
     <dt>lint project source files</dt>
     <dd><pre>lein lint</pre></dd>
 
@@ -41,7 +66,7 @@ Both Clojure and Leiningen require [OpenJDK](http://openjdk.java.net/install/). 
             <li>Document added, removed, fixed, etc. in <code>CHANGELOG.md</code></li>
             <li>Update the version entry in <code>project.clj</code></li>
             <li><code>git add . && git commit</code></li>
-            <li><code>git tag -a v<VERSION> -m "Tag version <VERSION>"</code></li>
+            <li><code>git tag -a vNEW.VERSION.NUMBER -m "Tag version NEW.VERSION.NUMBER"</code></li>
             <li><code>git push origin --tags && git push</code></li>
             <li><code>lein release</code></li>
         </ol>

@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file. This change
 - Templating helpers with flash support
 - Start / Stop functions
 - Use basic heroku secure middleware in production
+- Docs on how to use prone, run a focused test
 
 ### Fixed
 - Use correct test assertion order in handler test
