@@ -17,7 +17,8 @@
             "release" ["do" ["clean"] ["uberjar"] ["heroku" "deploy"]]
             "server" ["do" ["ring" "server-headless"]]}
 
-  :dependencies [[compojure "1.6.1"]
+  :dependencies [[bnadlerjr/logfmt "0.1.0"]
+                 [compojure "1.6.1"]
                  [environ "1.1.0"]
                  [http-kit "2.3.0"]
                  [org.clojure/clojure "1.9.0"]

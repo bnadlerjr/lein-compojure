@@ -32,7 +32,6 @@ Generates a compojure project with the following default features:
 * optional postgresql support w/ migrations
 * optional cljs support
 * handler tests should demo HTTP Basic login
-* logfmt support
 
 ## License
 

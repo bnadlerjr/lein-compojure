@@ -6,7 +6,8 @@
 
 (defroutes site-routes
   (GET "/" []
-       (template/render "index.html.selmer" {:env (select-keys env [:ring-env :port])}))
+       (template/render "index.html.selmer"
+                        {:env (select-keys env [:ring-env :port])}))
 
   (route/not-found "Not Found")
   (route/resources "/public"))

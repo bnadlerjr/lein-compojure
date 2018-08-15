@@ -1,6 +1,7 @@
 (ns {{name}}.app
   "Defines application and how it's started / stopped."
-  (:require [environ.core :refer [env]]
+  (:require [logfmt.core :as log]
+            [environ.core :refer [env]]
             [org.httpkit.server :as http-kit]
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
             [{{name}}.routes :refer [site-routes]])
@@ -20,11 +21,14 @@
 (defn init
   "Initializes application."
   []
+  (log/set-dev-mode! (not= "production" (env :ring-env "production")))
+  (log/info "Starting {{humanized-name}}" (select-keys env [:ring-env :port]))
   (selmer/set-resource-path! (clojure.java.io/resource "templates/")))
 
 (defn stop
   "Stops application and cleans up."
-  [])
+  []
+  (log/info "{{humanized-name}} stopped"))
 
 (defn -main
   "Entry point of the application."
