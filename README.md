@@ -29,7 +29,6 @@ Generates a compojure project with the following default features:
 ## TODO:
 * optional postgresql support w/ migrations
 * optional cljs support
-* is it worth it to attach REPL to running server? can it be automated w/ a lein alias?
 * investigate how mount could fit in
 
 ## License

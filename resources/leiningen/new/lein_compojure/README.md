@@ -23,11 +23,11 @@ Both Clojure and Leiningen require [OpenJDK](http://openjdk.java.net/install/). 
 ## Workflow
 ### I want to...
 <dl>
-    <dt>start the development server</dt>
+    <dt>start the development server (this will also start an nREPL)</dt>
     <dd><pre>lein server</pre></dd>
 
-    <dt>start a REPL session</dt>
-    <dd><pre>lein repl</pre></dd>
+    <dt>connect a REPL to the running server (you must run <code>lein server</code> first)</dt>
+    <dd><pre>lein repl :connect</pre></dd>
 
     <dt>watch source files for changes and automcatically run tests</dt>
     <dd><pre>lein autotest</pre></dd>

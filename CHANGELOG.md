@@ -11,6 +11,7 @@ All notable changes to this project will be documented in this file. This change
 - Use basic heroku secure middleware in production
 - Docs on how to use prone, run a focused test
 - Support for logfmt
+- `lein server` also start an nREPL that can be connected to with `lein repl :connect`
 
 ### Fixed
 - Use correct test assertion order in handler test
