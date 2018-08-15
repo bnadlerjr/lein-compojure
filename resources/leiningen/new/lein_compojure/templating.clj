@@ -32,7 +32,7 @@
      :body (->> (assoc params :flash (:flash request))
                 (selmer.parser/render-file template))}))
 
-(defn render-template
+(defn render
   "Renders a selmer template."
   ([template]
    (render-template 200 template {}))

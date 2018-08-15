@@ -25,5 +25,6 @@
              ["src/{{sanitized}}/app.clj" (render "app.clj" data)]
              ["src/{{sanitized}}/env.clj" (render "env.clj" data)]
              ["src/{{sanitized}}/handler.clj" (render "handler.clj" data)]
+             ["src/{{sanitized}}/routes.clj" (render "routes.clj" data)]
              ["src/{{sanitized}}/templating.clj" (render "templating.clj" data)]
              ["test/{{sanitized}}/handler_test.clj" (render "handler_test.clj" data)])))

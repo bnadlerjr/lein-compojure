@@ -35,7 +35,7 @@ Generates a compojure project with the following default features:
 * investigate how mount could fit in
 * optional postgresql support w/ migrations
 * optional cljs support
-* is app_secret needed for cookies?
+* is app_secret needed for cookies? -- don't think so
 * handler tests should demo HTTP Basic login
 * logfmt support
 
