@@ -14,6 +14,20 @@
         <![endif]-->
     </head>
     <body>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">{{humanized-name}}</a>
+                </div>
+            </div>
+        </nav>
+        {% if flash %}
+        <div class="container">
+            {% for item in flash %}
+            <div class="alert alert-{{ item|key|name }}">{{ item|val }}</div>
+            {% endfor %}
+        </div>
+        {% endif %}
         {% block content %}
         {% endblock %}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

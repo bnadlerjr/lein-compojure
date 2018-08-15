@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file. This change
 - Example site and api routes with tests
 - javax servlet as a development dependency
 - Script for starting a tmux session w/ windows for workspace, server, etc.
+- Templating helpers with flash support
 
 ### Fixed
 - Use correct test assertion order in handler test

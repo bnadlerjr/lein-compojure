@@ -28,12 +28,16 @@ Generates a compojure project with the following default features:
 
 ## TODO:
 * start / stop functions
-* flash support
-* CSRF token support
 * document how to use prone
 * document how to focus a single autotest
 * HTTP Basic Auth by default
 * use basic heroku secure middleware in production
+* remove env namespace, just use environ everywhere instead
+* investigate how mount could fit in
+* optional postgresql support w/ migrations
+* optional cljs support
+* separate main from handler (call it app?)
+* is app_secret needed for cookies?
 
 ## License
 
