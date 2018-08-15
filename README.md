@@ -30,12 +30,10 @@ Generates a compojure project with the following default features:
 * document how to use prone
 * document how to focus a single autotest
 * HTTP Basic Auth by default
-* use basic heroku secure middleware in production
 * remove env namespace, just use environ everywhere instead
 * investigate how mount could fit in
 * optional postgresql support w/ migrations
 * optional cljs support
-* is app_secret needed for cookies? -- don't think so
 * handler tests should demo HTTP Basic login
 * logfmt support
 

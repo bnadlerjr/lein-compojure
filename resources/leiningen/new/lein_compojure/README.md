@@ -25,12 +25,16 @@ Both Clojure and Leiningen require [OpenJDK](http://openjdk.java.net/install/). 
 <dl>
     <dt>start the development server</dt>
     <dd><pre>lein server</pre></dd>
+
     <dt>start a REPL session</dt>
     <dd><pre>lein repl</pre></dd>
+
     <dt>watch source files for changes and automcatically run tests</dt>
     <dd><pre>lein autotest</pre></dd>
+
     <dt>lint project source files</dt>
     <dd><pre>lein lint</pre></dd>
+
     <dt>deploy a production release to Heroku</dt>
     <dd>
         <ol>
@@ -50,12 +54,10 @@ Configuration is managed via the [lein-environ](https://github.com/weavejester/e
 ```
 {:profiles-dev
  {:env
-  {:app-secret "secret"
-   :ring-env "development"}}
+  {:ring-env "development"}}
  :profiles-test
  {:env
-  {:app-secret "secret"
-   :ring-env "test"}}}
+  {:ring-env "test"}}}
 ```
 
 The `profiles.clj` is ignored by Git so it is safe to put secrets into it. In production, environment variables are set as normal either through the Heroku CLI or dashboard. The `{{ name }}.env` namespace will extract the variables from the environment, perform any checking (i.e. check for required values, proper types, etc.) and make them available to the application. The following configuration variables are supported:
@@ -73,27 +75,19 @@ The `profiles.clj` is ignored by Git so it is safe to put secrets into it. In pr
     </thead>
     <tbody>
         <tr>
-            <td>app-secret</td>
-            <td>APP_SECRET</td>
-            <td>Yes</td>
-            <td>String</td>
-            <td>None</td>
-            <td>Application secret used for encrypting session information.</td>
-        </tr>
-        <tr>
             <td>port</td>
             <td>PORT</td>
-            <td>Only in production</td>
+            <td>Yes</td>
             <td>Integer</td>
             <td>Depends on environment</td>
-            <td>In development, an available port will automatically be selected. For production, this value must be specified.</td>
+            <td>In development, an available port will automatically be selected. For production, this value is provided by Heroku.</td>
         </tr>
         <tr>
             <td>ring-env</td>
             <td>RING_ENV</td>
             <td>Yes</td>
             <td>String</td>
-            <td>None</td>
+            <td>production</td>
             <td>Mode in which the application will run. Valid values are <strong>development</strong>, <strong>test</strong> and <strong>production</strong></td>
         </tr>
     </tbody>

@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file. This change
 - Script for starting a tmux session w/ windows for workspace, server, etc.
 - Templating helpers with flash support
 - Start / Stop functions
+- Use basic heroku secure middleware in production
 
 ### Fixed
 - Use correct test assertion order in handler test
@@ -18,6 +19,8 @@ All notable changes to this project will be documented in this file. This change
 
 ### Deprecated
 ### Removed
+- `app_secret` env variable references
+
 ### Fixed
 - Incorrect name in project / Clojars
 
