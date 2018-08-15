@@ -30,7 +30,6 @@ Generates a compojure project with the following default features:
 * document how to use prone
 * document how to focus a single autotest
 * HTTP Basic Auth by default
-* remove env namespace, just use environ everywhere instead
 * investigate how mount could fit in
 * optional postgresql support w/ migrations
 * optional cljs support

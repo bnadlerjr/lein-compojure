@@ -20,6 +20,7 @@ All notable changes to this project will be documented in this file. This change
 ### Deprecated
 ### Removed
 - `app_secret` env variable references
+- Remove env namespace, just use environ everywhere instead
 
 ### Fixed
 - Incorrect name in project / Clojars
