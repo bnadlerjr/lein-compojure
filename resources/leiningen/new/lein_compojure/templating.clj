@@ -8,15 +8,17 @@
 ;; These filters make it easier to iterate over maps on templates. For example:
 ;;
 ;; <dl>
+{{=<% %>=}}
 ;; {% for item in my-map %}
 ;;     <dt>{{ item|key }}</dt>
 ;;     <dd>{{ item|val }}</dd>
 ;; {% endfor %}
+<%={{ }}=%>
 ;; </dl>
 (selmer.filters/add-filter! :key key)
 (selmer.filters/add-filter! :val val)
 
-;; The tag should be added to all web forms.
+;; The CSRF tag should be added to all web forms.
 (selmer.parser/add-tag!
   :csrf-tag
   (fn [_ _] (ring/anti-forgery-field)))

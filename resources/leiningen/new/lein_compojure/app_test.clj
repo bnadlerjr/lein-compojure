@@ -12,11 +12,11 @@
 (deftest site-routes-test
   (testing "main route"
     (let [response (handler (with-auth (mock/request :get "/")))]
-      (is (= 200 (:status response) 200))))
+      (is (= 200 (:status response)))))
 
   (testing "not-found route"
     (let [response (handler (with-auth (mock/request :get "/invalid")))]
-      (is (= 404 (:status response) 404))))
+      (is (= 404 (:status response)))))
 
   (testing "main route when not authenticated"
     (let [response (handler (mock/request :get "/"))]

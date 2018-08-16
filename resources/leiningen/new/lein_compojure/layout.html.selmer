@@ -21,6 +21,7 @@
                 </div>
             </div>
         </nav>
+        {{=<% %>=}}
         {% if flash %}
         <div class="container">
             {% for item in flash %}
@@ -28,6 +29,7 @@
             {% endfor %}
         </div>
         {% endif %}
+        <%={{ }}=%>
         {% block content %}
         {% endblock %}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

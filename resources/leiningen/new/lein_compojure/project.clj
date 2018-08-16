@@ -60,7 +60,7 @@
 
     :ring {:handler {{name}}.app/handler
            :init {{name}}.app/init
-           :destroy {{name.app/stop}}
+           :destroy {{name}}.app/stop
            :stacktrace-middleware prone.middleware/wrap-exceptions}
 
     :source-paths ["dev-src"]

@@ -1,8 +1,6 @@
 {:profiles-dev
  {:env
-  {:app-secret "secret"
-   :ring-env "development"}}
+  {:ring-env "development"}}
  :profiles-test
  {:env
-  {:app-secret "secret"
-   :ring-env "test"}}}
+  {:ring-env "test"}}}
