@@ -5,10 +5,6 @@
             [buddy.auth.middleware :refer [wrap-authentication wrap-authorization]]
             [environ.core :refer [env]]))
 
-;; HTTP Basic Auth
-(def backend (backends/basic {:realm "{{humanized-name}}"
-                              :authfn verify-basic-auth}))
-
 (defn verify-basic-auth
   "Verifies basic auth username and password."
   [request {:keys [username password]}]
@@ -16,6 +12,10 @@
        (not (nil? password))
        (= (:http-basic-auth-username env) username)
        (= (:http-basic-auth-password env) password)))
+
+;; HTTP Basic Auth
+(def backend (backends/basic {:realm "{{humanized-name}}"
+                              :authfn verify-basic-auth}))
 
 (defn wrap-authorization-check
   "Wraps the given handler and throws an error if the request is not

@@ -1,7 +1,7 @@
 (ns {{name}}.app-test
   (:require [clojure.test :refer [deftest is testing]]
             [environ.core :refer [env]]
-            [ring-basic-auth-test :as basic-auth]
+            [ring-basic-auth-test.authorize :as basic-auth]
             [ring.mock.request :as mock]
             [{{name}}.app :refer [handler]]))
 
@@ -20,4 +20,4 @@
 
   (testing "main route when not authenticated"
     (let [response (handler (mock/request :get "/"))]
-      (is (= "" (:status response))))))
+      (is (= 401 (:status response))))))

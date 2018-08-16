@@ -79,10 +79,14 @@ Configuration is managed via the [lein-environ](https://github.com/weavejester/e
 ```
 {:profiles-dev
  {:env
-  {:ring-env "development"}}
+  {:http-basic-auth-username "{{name}}"
+   :http-basic-auth-password "secret"
+   :ring-env "development"}}
  :profiles-test
  {:env
-  {:ring-env "test"}}}
+  {:http-basic-auth-username "{{name}}"
+   :http-basic-auth-password "secret"
+   :ring-env "test"}}}
 ```
 
 The `profiles.clj` is ignored by Git so it is safe to put secrets into it. In production, environment variables are set as normal either through the Heroku CLI or dashboard. The `{{ name }}.env` namespace will extract the variables from the environment, perform any checking (i.e. check for required values, proper types, etc.) and make them available to the application. The following configuration variables are supported:
@@ -99,6 +103,22 @@ The `profiles.clj` is ignored by Git so it is safe to put secrets into it. In pr
         </tr>
     </thead>
     <tbody>
+        <tr>
+            <td>http-basic-auth-username</td>
+            <td>HTTP_BASIC_AUTH_USERNAME</td>
+            <td>Yes</td>
+            <td>String</td>
+            <td>None</td>
+            <td>Username for HTTP Basic Authentication</td>
+        </tr>
+        <tr>
+            <td>http-basic-auth-password</td>
+            <td>HTTP_BASIC_AUTH_PASSWORD</td>
+            <td>Yes</td>
+            <td>String</td>
+            <td>None</td>
+            <td>Password for HTTP Basic Authentication</td>
+        </tr>
         <tr>
             <td>port</td>
             <td>PORT</td>

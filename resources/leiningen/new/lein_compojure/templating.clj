@@ -23,6 +23,9 @@
   :csrf-tag
   (fn [_ _] (ring/anti-forgery-field)))
 
+;; Set the correct resource path for templates
+(selmer.parser/set-resource-path! (clojure.java.io/resource "templates/"))
+
 ;; Custom class that renders a selmer template and automatically associates
 ;; the request flash with the response.
 (deftype SelmerPage
@@ -37,8 +40,8 @@
 (defn render
   "Renders a selmer template."
   ([template]
-   (render-template 200 template {}))
+   (render 200 template {}))
   ([template params]
-   (render-template 200 template {}))
+   (render 200 template params))
   ([status template params]
     (SelmerPage. status template params)))

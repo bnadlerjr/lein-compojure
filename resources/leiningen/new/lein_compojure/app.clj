@@ -4,6 +4,7 @@
             [environ.core :refer [env]]
             [org.httpkit.server :as http-kit]
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
+            [selmer.parser :as selmer]
             [{{name}}.auth :refer [wrap-auth-middleware]]
             [{{name}}.routes :refer [site-routes]])
   (:gen-class))
@@ -24,8 +25,7 @@
   "Initializes application."
   []
   (log/set-dev-mode! (not= "production" (env :ring-env "production")))
-  (log/info "Starting {{humanized-name}}" (select-keys env [:ring-env :port]))
-  (selmer/set-resource-path! (clojure.java.io/resource "templates/")))
+  (log/info "Starting {{humanized-name}}" (select-keys env [:ring-env :port])))
 
 (defn stop
   "Stops application and cleans up."

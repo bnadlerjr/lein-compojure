@@ -61,6 +61,7 @@
     :ring {:handler {{name}}.app/handler
            :init {{name}}.app/init
            :destroy {{name}}.app/stop
+           :nrepl {:start? true}
            :stacktrace-middleware prone.middleware/wrap-exceptions}
 
     :source-paths ["dev-src"]

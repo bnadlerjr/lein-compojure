@@ -1,6 +1,10 @@
 {:profiles-dev
  {:env
-  {:ring-env "development"}}
+  {:http-basic-auth-username "{{name}}"
+   :http-basic-auth-password "secret"
+   :ring-env "development"}}
  :profiles-test
  {:env
-  {:ring-env "test"}}}
+  {:http-basic-auth-username "{{name}}"
+   :http-basic-auth-password "secret"
+   :ring-env "test"}}}
