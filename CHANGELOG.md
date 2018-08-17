@@ -18,6 +18,7 @@ All notable changes to this project will be documented in this file. This change
 
 ### Fixed
 - Use correct test assertion order in handler test
+- run-tmux script is executable
 
 ### Changed
 - Don't automatically open a browser window when running `lein server`

@@ -11,7 +11,7 @@ tmux new-window -t {{ name }}:3 -n "autotest"
 tmux send-keys "lein autotest" C-m
 
 tmux new-window -t {{ name }}:4 -n "repl"
-tmux send-keys "lein repl" C-m
+tmux send-keys 'echo "Start REPL with lein repl :connect after server has started nREPL"' C-m
 
 tmux select-window -t {{ name }}:1
 tmux attach-session -t {{ name }}

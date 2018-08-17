@@ -25,7 +25,7 @@
               ["resources/public/.gitkeep" (render "gitkeep" data)]
               ["resources/templates/index.html.selmer" (render "index.html.selmer" data)]
               ["resources/templates/layout.html.selmer" (render "layout.html.selmer" data)]
-              ["scripts/run-tmux" (render "run-tmux" data)]
+              ["scripts/run-tmux" (render "run-tmux" data) :executable true]
               ["src/{{sanitized}}/app.clj" (render "app.clj" data)]
               ["src/{{sanitized}}/auth.clj" (render "auth.clj" data)]
               ["src/{{sanitized}}/routes.clj" (render "routes.clj" data)]
