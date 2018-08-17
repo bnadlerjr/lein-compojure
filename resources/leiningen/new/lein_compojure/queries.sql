@@ -1,0 +1,1 @@
+-- SQL for the {{humanized-name}} project. Refer to https://www.hugsql.org/ for usage.

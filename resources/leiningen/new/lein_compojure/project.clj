@@ -14,17 +14,29 @@
 
   :aliases {"autotest" ["do" ["with-profile" "test" "test-refresh"]]
             "lint" ["do" ["ancient"] ["kibit"] ["eastwood"]]
+            {{#postgresql?}}
+            "generate-migration" ["run" "-m" "user/create-migration"]
+            "migrate" ["run" "-m" "{{sanitized}}.db/migrate"]
+            "rollback" ["run" "-m" "{{sanitized}}.db/rollback"]
+            {{/postgresql?}}
             "release" ["do" ["clean"] ["uberjar"] ["heroku" "deploy"]]
             "server" ["do" ["ring" "server-headless"]]}
 
   :dependencies [[bnadlerjr/logfmt "0.1.0"]
                  [buddy/buddy-auth "2.1.0"]
                  [buddy/buddy-core "1.5.0"]
+                 {{#postgresql?}}
+                 [com.layerware/hugsql "0.4.9"]
+                 {{/postgresql?}}
                  [compojure "1.6.1"]
                  [environ "1.1.0"]
                  [http-kit "2.3.0"]
                  [org.clojure/clojure "1.9.0"]
                  [org.clojure/tools.logging "0.4.1"]
+                 {{#postgresql?}}
+                 [org.postgresql/postgresql "42.2.4"]
+                 [ragtime "0.7.2"]
+                 {{/postgresql?}}
                  [ring/ring-defaults "0.3.2"]
                  [selmer "1.11.9"]]
 

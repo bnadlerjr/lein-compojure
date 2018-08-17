@@ -7,18 +7,28 @@ TODO: Write a general description of the project.
 * [Initial Setup](#initial-setup)
 * [Workflow](#workflow)
 * [Configuration Variables](#configuration-variables)
+{{#postgresql?}}
+* [Database Migrations](#database-migrations)
+{{/postgresql?}}
 
 ## Pre-requisites
 * [Clojure](https://clojure.org/guides/getting_started)
 * [Leiningen](https://leiningen.org/)
 * [Heroku Toolbelt](https://devcenter.heroku.com/articles/heroku-cli)
+{{#postgresql?}}
+* [PostreSQL](https://www.postgresql.org/) (for local development)
+{{/postgresql?}}
 
 Both Clojure and Leiningen require [OpenJDK](http://openjdk.java.net/install/). Version 8 is recommended.
 
 ## Initial Setup
 1. Clone this repository
-2. Create a `profiles.clj` file in the project's root. See the [Configuration Variables](#configuration-variables) section for more information.
-3. Run `lein deps` in the project's root to install dependencies.
+1. Create a `profiles.clj` file in the project's root. See the [Configuration Variables](#configuration-variables) section for more information.
+1. Run `lein deps` in the project's root to install dependencies.
+{{#postgresql?}}
+1. Create hydra-dev and hydra-test databases (i.e. `createdb hydra-dev`).
+1. Migrate the development database: `lein migrate` (the test database will automatically be migrated if necessary during test runs).
+{{/postgresql?}}
 
 ## Workflow
 ### I want to...
@@ -56,6 +66,17 @@ Both Clojure and Leiningen require [OpenJDK](http://openjdk.java.net/install/). 
     (debug)))
         </pre>
     </dd>
+    {{#postgresql?}}
+
+    <dt>Migrate the database</dt>
+    <dd><pre>lein migrate</pre></dd>
+
+    <dt>Rollback the last migration</dt>
+    <dd><pre>lein rollback</pre></dd>
+
+    <dt>Create a new migration file</dt>
+    <dd><pre>lein generate-migration NAME</pre></dd>
+    {{/postgresql?}}
 
     <dt>lint project source files</dt>
     <dd><pre>lein lint</pre></dd>
@@ -81,10 +102,16 @@ Configuration is managed via the [lein-environ](https://github.com/weavejester/e
  {:env
   {:http-basic-auth-username "{{name}}"
    :http-basic-auth-password "secret"
+   {{#postgresql?}}
+   :database-url "postgresql://localhost:5432/{{name}}-dev"
+   {{/postgresql?}}
    :ring-env "development"}}
  :profiles-test
  {:env
   {:http-basic-auth-username "{{name}}"
+   {{#postgresql?}}
+   :database-url "postgresql://localhost:5432/{{name}}-test"
+   {{/postgresql?}}
    :http-basic-auth-password "secret"
    :ring-env "test"}}}
 ```
@@ -103,6 +130,16 @@ The `profiles.clj` is ignored by Git so it is safe to put secrets into it. In pr
         </tr>
     </thead>
     <tbody>
+        {{#postgresql?}}
+        <tr>
+            <td>database-url</td>
+            <td>DATABASE_URL</td>
+            <td>Yes</td>
+            <td>String</td>
+            <td>None</td>
+            <td>PostgreSQL connection information. In production this will be provided by Heroku.</td>
+        </tr>
+        {{/postgresql?}}
         <tr>
             <td>http-basic-auth-username</td>
             <td>HTTP_BASIC_AUTH_USERNAME</td>
@@ -137,3 +174,10 @@ The `profiles.clj` is ignored by Git so it is safe to put secrets into it. In pr
         </tr>
     </tbody>
 </table>
+{{#postgresql?}}
+
+## Database Migrations
+This project uses [ragtime](https://github.com/weavejester/ragtime) for database migrations. Migrations are defined in the `resources/migrations` folder, both [EDN and SQL](https://github.com/weavejester/ragtime/wiki/SQL-Migrations) formats are supported. Blank migration files can be created with `lein generate-migration NAME` (migration files will only be created in SQL format).
+
+In development mode, run migrations w/ `lein migrate`. When running tests, migrations will automatically be applied. Migrations in production are run automatically during the [release phase](https://devcenter.heroku.com/articles/release-phase) on Heroku.
+{{/postgresql?}}
