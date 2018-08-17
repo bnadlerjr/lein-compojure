@@ -18,6 +18,9 @@ TODO: Write a general description of the project.
 {{#postgresql?}}
 * [PostreSQL](https://www.postgresql.org/) (for local development)
 {{/postgresql?}}
+{{#sass?}}
+* [SassC](https://github.com/sass/sassc) compiler
+{{/sass?}}
 
 Both Clojure and Leiningen require [OpenJDK](http://openjdk.java.net/install/). Version 8 is recommended.
 
@@ -38,7 +41,12 @@ Both Clojure and Leiningen require [OpenJDK](http://openjdk.java.net/install/). 
 
     <dt>connect a REPL to the running server (you must run <code>lein server</code> first)</dt>
     <dd><pre>lein repl :connect</pre></dd>
+    {{#sass?}}
 
+    <dt>watch SASS files and automatically compile them</dt>
+    <dd><pre>lein sass auto</pre></dd>
+
+    {{/sass?}}
     <dt>watch source files for changes and automcatically run tests</dt>
     <dd><pre>lein autotest</pre></dd>
 
@@ -86,6 +94,9 @@ Both Clojure and Leiningen require [OpenJDK](http://openjdk.java.net/install/). 
         <ol>
             <li>Document added, removed, fixed, etc. in <code>CHANGELOG.md</code></li>
             <li>Update the version entry in <code>project.clj</code></li>
+            {{#sass?}}
+            <li>Re-generate CSS files (if necessary) <code>lein sass clean</code> then <code>lein sass once</code></li>
+            {{/sass?}}
             <li><code>git add . && git commit</code></li>
             <li><code>git tag -a vNEW.VERSION.NUMBER -m "Tag version NEW.VERSION.NUMBER"</code></li>
             <li><code>git push origin --tags && git push</code></li>

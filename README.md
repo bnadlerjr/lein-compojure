@@ -13,6 +13,7 @@ Generates a compojure project with the following default features:
 * [Prone](https://github.com/magnars/prone) for exception reporting middleware during development
 * [Selmer](https://github.com/yogthos/Selmer) templating with default [Bootstrap](https://getbootstrap.com/docs/3.3/) layout and [FontAwesome](https://fontawesome.com/) support
 * Optional PostgreSQL support with [HugSQL](https://www.hugsql.org/) and migrations with [ragtime](https://github.com/weavejester/ragtime)
+* Optional SASS support
 
 ## Usage
 
@@ -35,7 +36,6 @@ Generates a compojure project with the following default features:
 * optional user mgmt. support (users table, queries, templates, login, registration, password reset, forgot password)
 * optional user mgmt. support for OAuth (user table, queries, user creation, login)
 * look into using hooks for DB functions (https://github.com/technomancy/robert-hooke/)
-* optional sassc support
 * CircleCI support
 * better 500 and 404 error handling (default pages? middleware for 500?)
 

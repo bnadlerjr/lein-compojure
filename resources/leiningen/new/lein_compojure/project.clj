@@ -44,6 +44,9 @@
             [lein-ancient "0.6.15"]
             [lein-environ "1.1.0"]
             [lein-heroku "0.5.3"]
+            {{#sass?}}
+            [lein-sass "0.5.0"]
+            {{/sass?}}
             [lein-kibit "0.1.6"]]
 
   :heroku {:app-name "{{ name }}"
@@ -75,6 +78,11 @@
            :destroy {{name}}.app/stop
            :nrepl {:start? true}
            :stacktrace-middleware prone.middleware/wrap-exceptions}
+    {{#sass?}}
+
+    :sass {:src "resources/sass"
+           :output-directory "resources/public/css"}
+    {{/sass?}}
 
     :source-paths ["dev-src"]
 

@@ -14,6 +14,7 @@ All notable changes to this project will be documented in this file. This change
 - `lein server` also start an nREPL that can be connected to with `lein repl :connect`
 - Optional PostgreSQL support w/ migrations
 - FontAwesome
+- Optional SASS support
 
 ### Fixed
 - Use correct test assertion order in handler test

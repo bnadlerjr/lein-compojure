@@ -13,7 +13,8 @@
   (let [data {:name name
               :humanized-name (clojure.string/capitalize name)
               :sanitized (name-to-path name)
-              :postgresql? (includes? "+postgresql" options)}
+              :postgresql? (includes? "+postgresql" options)
+              :sass? (includes? "+sass" options)}
         base [[".gitignore" (render "gitignore" data)]
               ["CHANGELOG.md" (render "CHANGELOG.md" data)]
               ["Procfile" (render "Procfile" data)]
@@ -33,8 +34,11 @@
         postgresql [["resources/queries.sql" (render "queries.sql" data)]
                     ["resources/migrations/.gitkeep" (render "gitkeep" data)]
                     ["src/{{sanitized}}/db.clj" (render "db.clj" data)]
-                    ["test/{{sanitized}}/db_test.clj" (render "db_test.clj" data)]]]
+                    ["test/{{sanitized}}/db_test.clj" (render "db_test.clj" data)]]
+        sass [["resources/public/css/.gitkeep" (render "gitkeep" data)]
+              ["resources/sass/styles.scss" (render "styles.scss" data)]]]
     (main/info "Generating fresh Compojure project.")
     (apply ->files data
            (cond-> base
-             (:postgresql? data) (concat postgresql)))))
+             (:postgresql? data) (concat postgresql)
+             (:sass? data) (concat sass)))))
