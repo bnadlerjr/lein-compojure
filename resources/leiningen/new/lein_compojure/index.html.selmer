@@ -12,7 +12,7 @@
         <li>Integration with <a href="https://github.com/weavejester/lein-ring">lein-ring</a> server</li>
         <li><a href="http://www.http-kit.org/">HTTP Kit</a> web server in production</li>
         <li><a href="https://github.com/magnars/prone">Prone</a> for exception reporting middleware during development</li>
-        <li><a href="https://github.com/yogthos/Selmer">Selmer</a> templating with default <a href="https://getbootstrap.com/docs/3.3/">Bootstrap</a> layout</li>
+        <li><a href="https://github.com/yogthos/Selmer">Selmer</a> templating with default <a href="https://getbootstrap.com/docs/3.3/">Bootstrap</a> layout and <a href="https://fontawesome.com/">FontAwesome</a> support
     </ul>
     <h2>Environment</h2>
     {{=<% %>=}}

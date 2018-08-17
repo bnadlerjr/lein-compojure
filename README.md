@@ -11,7 +11,7 @@ Generates a compojure project with the following default features:
 * Integration with [lein-ring](https://github.com/weavejester/lein-ring) server
 * [HTTP Kit](http://www.http-kit.org/) web server in production
 * [Prone](https://github.com/magnars/prone) for exception reporting middleware during development
-* [Selmer](https://github.com/yogthos/Selmer) templating with default [Bootstrap](https://getbootstrap.com/docs/3.3/) layout
+* [Selmer](https://github.com/yogthos/Selmer) templating with default [Bootstrap](https://getbootstrap.com/docs/3.3/) layout and [FontAwesome](https://fontawesome.com/) support
 * Optional PostgreSQL support with [HugSQL](https://www.hugsql.org/) and migrations with [ragtime](https://github.com/weavejester/ragtime)
 
 ## Usage
@@ -30,14 +30,14 @@ Generates a compojure project with the following default features:
 ## TODO:
 * optional cljs support
 * investigate how mount could fit in
-* exception email support; middleware for prod
+* exception email support; middleware for prod --> maybe segment which can send info to bugsnag or another service? -- actually segment only sends identify to bugsnag, specific bugsnag middleware is still needed (https://github.com/omartell/bugsnag-client-clj/blob/master/src/bugsnag_client/core.clj)
 * optional MongoDB support w/ Monger
 * optional user mgmt. support (users table, queries, templates, login, registration, password reset, forgot password)
 * optional user mgmt. support for OAuth (user table, queries, user creation, login)
 * look into using hooks for DB functions (https://github.com/technomancy/robert-hooke/)
 * optional sassc support
-* fontawesome support
 * CircleCI support
+* better 500 and 404 error handling (default pages? middleware for 500?)
 
 ## License
 
