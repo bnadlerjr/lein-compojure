@@ -9,17 +9,21 @@
             [{{name}}.routes :refer [site-routes]])
   (:gen-class))
 
+;; Ring application defaults. Adds secure session and SSL redirect when in
+;; production mode.
+(def application-defaults
+  (if (not= "production" (env :ring-env "production"))
+    site-defaults
+    (-> site-defaults
+        (assoc :proxy true)
+        (assoc-in [:session :cookie-attrs :secure] true)
+        (assoc-in [:session :cookie-name] "{{name}}-session")
+        (assoc-in [:security :ssl-redirect] true))))
+
 ;; Application Ring handler
 (def handler
-  (if (not= "production" (env :ring-env "production"))
-    (wrap-auth-middleware (wrap-defaults site-routes site-defaults))
-    (wrap-auth-middleware
-      (wrap-defaults site-routes
-                     (-> site-defaults
-                         (assoc :proxy true)
-                         (assoc-in [:session :cookie-attrs :secure] true)
-                         (assoc-in [:session :cookie-name] "{{name}}-session")
-                         (assoc-in [:security :ssl-redirect] true))))))
+  (-> (wrap-defaults site-routes application-defaults)
+      wrap-auth-middleware))
 
 (defn init
   "Initializes application."
